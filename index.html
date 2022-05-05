@@ -12,6 +12,10 @@
     <!--HTML table to create gameboard: replacing original a, b, c, etc with cell number id's "00", "01", "10", "20", etc. Each cell of the grid corresponds to a <td> in the table. This will overlay the visual grid in the background image so I can place a hit or miss graphic when played.-->
     
     <div id="board">
+        
+        <!--messageArea div will be sued to display messages from code-->
+        <div id="messageArea"></div>
+       
         <table>
             <tr>
                 <td id="00"></td><td id="01"></td><td id="02"></td><td id="03"></td><td id="04"></td><td id="05"></td><td id="06"></td>
@@ -35,6 +39,11 @@
                 <td id="60"></td><td id="61"></td><td id="62"></td><td id="63"></td><td id="64"></td><td id="65"></td><td id="66"></td>
             </tr>
         </table>
+        <form>
+            <!--2 inputs: one for the guess (text) and one for the button.-->
+            <input type="text" id="guessInput" placeholder="A0">
+            <input type="text" id="fireButton" value="Fire!">
+        </form>
     </div>
     <script src="battleshipGame.js"></script>   
 </body>
