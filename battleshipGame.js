@@ -70,6 +70,9 @@ function parseGuess(guess) {
             alert("Oops, that location isn't on the board.");
         } else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
             alert("Oops, that's off the board!");
+        } else {
+            return row + column;
         }
     }
+    return null;
 }
