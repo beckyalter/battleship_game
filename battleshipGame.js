@@ -24,6 +24,9 @@ view.displayHit("26");
 
 view.displayMessage("Tap tap, is this thing on?");
 
+
+/*Setting up the Object (model): maintains the "state" of the game, with properties: ships (coordinates for each ship), and fire function*/
+
 var model = {
     boardSize: 7,
     numShips: 3,
@@ -36,6 +39,23 @@ var model = {
     fire: function(guess) {
         for (var i = 0; i < this.numShips; i++) {
             var ship = this.ships[i];
+            var index = ship.locations.indexOf(guess);
+            if (index >= 0) {
+                ship.hits[index] = "hit";
+                if (this.isSunk(ship)) {
+                    this.shipsSunk++;
+                }
+                return true;
+            }
         }
+        return false;
+    },
+    isSunk: function(ship) {
+        for (var i = 0; i < this.shipLength; i++) {
+            if (ship.hits[i] !== "hit") {
+                return false;
+            }
+        }
+        return true;
     }
-}
+};
