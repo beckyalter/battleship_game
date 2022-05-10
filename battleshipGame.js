@@ -15,6 +15,20 @@ var view = {
     }
 };
 
+/*Setting the event handler to the Fire! button*/
+
+function init() {
+    var fireButton = document.getElementById("fireButton");
+    fireButton.onclick = handleFireButton;
+}
+
+function handleFireButton() {
+    var guessInput = document.getElementById("guessInput");
+    var guess = guessInput.value;
+}
+
+window.onload = init;
+
 /*Setting up the Object (model): maintains the "state" of the game, with properties: ships (coordinates for each ship), and fire function*/
 
 var model = {
